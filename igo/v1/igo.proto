@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "github.com/mskcc/smile_types/igo/v1";
+
+message Deliveries {
+        repeated Delivery deliveries=1;
+}
+
+message Delivery {
+        string request = 1;
+        int64 deliveryDate = 2; // unix time in milliseconds
+}
