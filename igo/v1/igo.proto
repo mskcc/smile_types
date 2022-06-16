@@ -10,3 +10,32 @@ message Delivery {
         string request = 1;
         int64 deliveryDate = 2; // unix time in milliseconds
 }
+
+message Request {
+    bool bicAnalysis = 1;
+    string dataAccessEmails = 2;
+    string dataAnalystEmail = 3;
+    string dataAnalystName = 4;
+    uint32 deliveryDate = 5;
+    string investigatorEmail = 6;
+    string investigatorName = 7;
+    bool isCmoRequest = 8;
+    string labHeadEmail = 9;
+    string labHeadName = 10;
+    string libraryType = 11;
+    string otherContactEmails = 12;
+    string piEmail = 13;
+    repeated string pooledNormals = 14;
+    string projectManagerName = 15;
+    string qcAccessEmails = 16;
+    string recipe = 17;
+    string requestId = 18;
+    repeated Samples samples = 19;
+    string strand = 20;
+
+    message Samples {
+            bool igoComplete = 1;
+            string igoSampleId = 2;
+            string investigatorSampleId = 3;
+    }
+}
