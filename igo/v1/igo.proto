@@ -2,13 +2,9 @@ syntax = "proto3";
 
 option go_package = "github.com/mskcc/smile_types/igo/v1";
 
-message Deliveries {
-        repeated Delivery deliveries=1;
-}
-
 message Delivery {
-        string request = 1;
-        int64 deliveryDate = 2; // unix time in milliseconds
+    string request = 1;
+    int64 deliveryDate = 2; // unix time in milliseconds
 }
 
 message Request {
@@ -34,8 +30,70 @@ message Request {
     string strand = 20;
 
     message Samples {
-            bool igoComplete = 1;
-            string igoSampleId = 2;
-            string investigatorSampleId = 3;
+        bool igoComplete = 1;
+        string igoSampleId = 2;
+        string investigatorSampleId = 3;
+    }
+}
+
+message SampleManifest {
+    string baitSet = 1;
+    string cfDNA2dBarcode = 2;
+    string cmoInfoIgoId = 3;
+    string cmoPatientId = 4;
+    string cmoSampleClass = 5;
+    Cmosampleidfields cmoSampleIdFields = 6;
+    string cmoSampleName = 7;
+    string collectionYear = 8;
+    string igoId = 9;
+    string investigatorSampleId = 10;
+    repeated Libraries libraries = 11;
+    string oncoTreeCode = 12;
+    string preservation = 13;
+    repeated Qcreports qcReports = 14;
+    string sampleName = 15;
+    string sampleOrigin = 16;
+    string sex = 17;
+    string species = 18;
+    string specimenType = 19;
+    string tissueLocation = 20;
+    string tubeId = 21;
+    string tumorOrNormal = 22;
+
+    message Cmosampleidfields {
+        string naToExtract = 1;
+        string normalizedPatientId = 2;
+        string recipe = 3;
+        string sampleType = 4;
+    }
+
+    message Runs {
+        repeated string fastqs = 1;
+        string flowCellId = 2;
+        repeated uint32 flowCellLanes = 3;
+        string readLength = 4;
+        string runDate = 5;
+        string runId = 6;
+        string runMode = 7;
+    }
+
+    message Libraries {
+        string barcodeId = 1;
+        string barcodeIndex = 2;
+        string captureConcentrationNm = 3;
+        string captureInputNg = 4;
+        string captureName = 5;
+        uint32 dnaInputNg = 6;
+        uint32 libraryConcentrationNgul = 7;
+        string libraryIgoId = 8;
+        uint32 libraryVolume = 9;
+        repeated Runs runs = 10;
+    }
+
+    message Qcreports {
+        string IGORecommendation = 1;
+        string comments = 2;
+        string investigatorDecision = 3;
+        string qcReportType = 4;
     }
 }
