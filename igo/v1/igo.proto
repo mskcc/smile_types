@@ -16,7 +16,7 @@ message Request {
     string dataAccessEmails = 2;
     string dataAnalystEmail = 3;
     string dataAnalystName = 4;
-    uint32 deliveryDate = 5;
+    int64 deliveryDate = 5;
     string investigatorEmail = 6;
     string investigatorName = 7;
     bool isCmoRequest = 8;
