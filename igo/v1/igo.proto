@@ -59,7 +59,7 @@ message SampleManifest {
     string tissueLocation = 20;
     string tubeId = 21;
     string tumorOrNormal = 22;
-    optional bool igoComplete = 23;
+    bool igoComplete = 23;
 
     message Cmosampleidfields {
         string naToExtract = 1;
