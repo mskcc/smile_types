@@ -108,10 +108,10 @@ message SampleManifest {
         string captureConcentrationNm = 3;
         string captureInputNg = 4;
         string captureName = 5;
-        uint32 dnaInputNg = 6;
-        uint32 libraryConcentrationNgul = 7;
+        float dnaInputNg = 6;
+        float libraryConcentrationNgul = 7;
         string libraryIgoId = 8;
-        uint32 libraryVolume = 9;
+        float libraryVolume = 9;
         repeated Runs runs = 10;
     }
 
